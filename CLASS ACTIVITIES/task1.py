@@ -1,0 +1,1 @@
+print("Name\tYear\nAbena\t2022\nKojo\t2027")
