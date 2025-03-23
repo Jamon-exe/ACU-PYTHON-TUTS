@@ -1,6 +1,8 @@
-# -ACU-PYTHON-TUTS
+#ACU-PYTHON-TUTS
 
-## Academic City University Python
+##Academic City University Python
 
-#### - Made Some food
-sorta kinda
+####Activities
+- Sleep
+- Food
+- Memories
