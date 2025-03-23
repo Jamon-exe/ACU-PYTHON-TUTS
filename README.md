@@ -1,8 +1,8 @@
-#ACU-PYTHON-TUTS
+# ACU-PYTHON-TUTS
 
-##Academic City University Python
+## Academic City University Python
 
-####Activities
+#### Activities
 - Sleep
 - Food
 - Memories
