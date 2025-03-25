@@ -19,3 +19,7 @@ print ("------------------------")
 for i in range(1, tablenum + 1):
     Fahrenheit = 9/5 * i + 32
     print(i, "\t", Fahrenheit)
+
+
+#Question 5
+numyears = int(input("Enter the number of years: "))
