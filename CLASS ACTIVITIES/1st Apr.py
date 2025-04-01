@@ -169,3 +169,72 @@ for x in numbers:
     x**=2
     n+=x
 print(n)
+
+#-------------RANGE---------------------------
+#range(end) - generates a sequence of numbers from 0 to end-1
+#range(5)= [0, 1, 2, 3, 4]
+
+#range(start, end) - generates a sequence of numbers from start to end-1
+#range(2, 5)= [2, 3, 4]
+
+#range(start, end, step) - generates a sequence of numbers from start to end-1 with a step size of step
+#range(2, 10, 2)= [2, 4, 6, 8]
+
+print(range(5)) # Output: range(0, 5)
+print(list(range(5))) # Output: [0, 1, 2, 3, 4]
+print(list(range(2, 5))) # Output: [2, 3, 4]
+print(list(range(2, 10, 2))) # Output: [2, 4, 6, 8]
+print("\n\n")
+
+#when using a range your start value should be less than your end value
+#otherwise you will get an empty list.
+#For example:
+print(list(range(5, 2))) # Output: [] (empty list)
+print(list(range(5, 2, -1))) # Output: [5, 4, 3] (list created from range with negative step)
+
+#------------TASK----------------------------
+for i in range(0,11, 2):
+    if i == 0:
+        continue
+    print(i) # This will not print anything because the range is empty
+
+print([x for x in range(2,11,2)]) 
+
+for _ in range(5):
+    print("Hello World")
+
+for a in ['Hello World']*5:
+    print(a)
+
+x=[]
+for a in range(5):
+    x.append("Hello World")
+    print (x)
+
+t=0
+for a in range(5):
+    t+=1
+    print('Hello World '*t)
+
+c=0
+for a in range(31):
+    c+=2
+print (f"${c}")
+
+number=int(input("Enter a positive number: "))
+for a in range(1,13):
+    print(f"{number} x {a} = \t{number*a}")
+
+list_a = [1, 2, 3, 4, 5, 6, 7, 8]
+list_b = [3, 4, 7, 10, 11]
+new =[]
+for a in list_a:
+    duplicate = 0
+    for b in list_b:
+        if a == b:
+            duplicate = 1
+            break
+    if duplicate == 0:
+        new += [a]
+  
+print(new)
