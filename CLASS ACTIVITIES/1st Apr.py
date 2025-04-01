@@ -5,6 +5,9 @@ d = ['apple', 1, True] # A list with mixed data types
 
 #A list is a collection of items in a particular order. It stores multiple items in a single variable.
 #A list is created by placing all the items (elements) inside square brackets [], separated by commas.
+# [] is used to create a list.
+# () is used to create a tuple.
+# {} is used to create a set.
 
 #---------------------------------------
 #Lists are mutable, meaning they can be changed. You can add, remove, or change items in a list after it has been created.
@@ -128,3 +131,41 @@ for each in veg_fruits:
     if each == 'pineapple':
         continue
     print(each)
+print("\n\n")
+
+#----------------------------------------
+numbers = [1, 2, 3, 4, 5, 6]
+for x in numbers:
+    print(x**2)
+print ("Congratulations!")
+print("\n\n")
+#---------------------------------------
+
+print([x**2 for x in numbers if x % 2 == 0])
+print("\n\n")
+
+#---------------TASK----------------------------
+
+#---------------------------------------
+for x in numbers:
+    print(x**2)
+print("\n")
+#---------------------------------------
+for x in numbers:
+    if x == 3 or x == 5 or x == 4:
+        continue
+    print(x**2)
+print("\n")
+#---------------------------------------
+for x in numbers:
+    x**=2
+    if x >=10 and x <=40:
+        print(x)
+print("\n")
+
+#---------------------------------------
+n=0
+for x in numbers:
+    x**=2
+    n+=x
+print(n)
