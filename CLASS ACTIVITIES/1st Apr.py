@@ -229,12 +229,11 @@ list_a = [1, 2, 3, 4, 5, 6, 7, 8]
 list_b = [3, 4, 7, 10, 11]
 new =[]
 for a in list_a:
-    duplicate = 0
+    duplicate = False
     for b in list_b:
         if a == b:
-            duplicate = 1
+            duplicate = True
             break
-    if duplicate == 0:
-        new += [a]
-  
+    if duplicate == False:
+        new += [a]  
 print(new)
