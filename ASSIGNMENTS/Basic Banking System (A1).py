@@ -25,36 +25,52 @@ while pin != new_pin:
                 
 
                 elif choice == "D":
-                    deposit = int(input("Enter amount to deposit: "))
+                    while True:
+                        deposit = input("Enter amount to deposit: ")
+                        if deposit.isalpha():
+                            print("Invalid amount")
+                        elif deposit.isdigit():
+                            deposit = int(deposit)
+                            break
+                        else:
+                            print("Invalid amount")
+
                     if deposit < 0:
                         print("Invalid amount")
                     else:
                         balance += deposit
                         print(f"Deposit successful. New balance: {balance}")
-                        d= f"Deposit of {deposit} at {now.strftime('%Y-%m-%d %H:%M:%S')}"
+                        d= f"Deposit of {deposit} at {datetime.datetime.today().strftime('%Y-%m-%d %H:%M:%S')}"
                         transactions.append(d)
 
 
                 elif choice == "W":
-                    withdraw_limit = 100
+                    withdraw_limit = 1000  # Set withdrawal limit
                     #add a place to change withdrawal 
                     while True:
                         if balance == 0:
                             print(f"Your account is empty")
                             break
-
-                        withdraw = int(input("Enter amount to withdraw: "))
+                        while True:
+                            withdraw = input("Enter amount to withdraw: ")
+                            if withdraw.isalpha():
+                                print("Invalid amount")
+                            elif withdraw.isdigit():
+                                withdraw = int(withdraw)
+                                break
+                            else:
+                                print("Invalid amount")
 
                         if balance < withdraw:
                             print(f"Insufficient Funds. Your balance is: {balance}")
                         elif withdraw < 0:
                             print("Invalid amount")
                         elif withdraw > withdraw_limit:
-                            print(f"Exceeded withdrawal limit. Your balance is: {balance}")
+                            print(f"Exceeded withdrawal limit. Your withdrawal limit is {withdraw_limit}. Your balance is: {balance}")
                         elif balance > withdraw:
                             balance -= withdraw
                             print(f"Withdrawal successful. Your balance is: {balance}")
-                            w = f"Withdrawal of {withdraw} at {now.strftime('%Y-%m-%d %H:%M:%S')}"
+                            w = f"Withdrawal of {withdraw} at {datetime.datetime.today().strftime('%Y-%m-%d %H:%M:%S')}"
                             transactions.append(w)
                             break
                         
@@ -82,11 +98,16 @@ while pin != new_pin:
                     break
 
                 elif choice == "T":
-                    for a in reversed(transactions):
-                        print(a)
                     if len(transactions) == 0:
                         print("No transactions yet\n")
-                    
+                    elif len(transactions) <= 5:
+                         for a in reversed(transactions):
+                            print(a)
+                    else:
+                        print("Last 5 transactions:")
+                        for a in reversed(transactions[-5:]):
+                            print(a)
+
 
                 else:
                     print("Incorrect Input.Try Again")
