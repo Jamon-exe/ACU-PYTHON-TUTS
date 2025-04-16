@@ -1,0 +1,28 @@
+def unique():
+    first_name = input("Enter your firstname: ")
+    last_name = input("Enter your lastname: ")
+    roll_number = input("Enter your roll number: ")
+    if len(first_name)<10 and len(last_name)<10 and len(roll_number)<10:
+        if not first_name.isalpha and last_name.isalpha and roll_number.isdigit:
+            print("Try again")
+        else:
+            first = first_name[ :4].upper()
+            last = last_name[ :3].lower()
+            roll =roll_number[-3: ]
+            print(f"Generated ID:{first}{last}{roll}")
+            code= f"Generated ID:{first}{last}{roll}"
+    else:
+        print("You can not enter more than 10 values for any input")
+    return code
+
+def details(name):
+    print(f"{name} please enter your code")
+
+details("Ben")
+ben=unique()
+details("Jamon")
+jamon=unique()
+details("Khadija")
+khadija=unique()
+
+print(f"the codes are {ben}, {jamon}, {khadija}")
